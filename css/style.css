@@ -454,6 +454,7 @@ main {
   margin-top: -8rem;
   margin-bottom: 7.2rem;
 }
+
 .skills__title {
   padding: 0.8rem;
   margin-top: 0.8rem;
@@ -506,6 +507,7 @@ main {
   text-transform: capitalize;
   letter-spacing: 0.2rem;
 }
+
 .software-skill p {
   font-style: italic;
   font-size: 1.33rem;
@@ -1044,6 +1046,34 @@ main {
   opacity: 0;
 }
 
+/* Animações para baixo */
+.fade-down {
+  transform: translateY(0);
+}
+
+.animate.enter.fade-down {
+  transform: translateY(-20px);
+}
+
+.animate.exit.fade-down {
+  transform: translateY(0);
+  opacity: 0;
+}
+
+/* Animações para cima */
+.fade-up {
+  transform: translateY(0);
+}
+
+.animate.enter.fade-up {
+  transform: translateY(20px);
+}
+
+.animate.exit.fade-up {
+  transform: translateY(0);
+  opacity: 0;
+}
+
 /* Animações para a direita */
 .fade-right {
   transform: translateX(50px);
@@ -1092,4 +1122,31 @@ main {
 .software-skill__item.exit {
   opacity: 0;
   transform: translateY(-30px);
+}
+
+/* estado inicial */
+.project-item {
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  will-change: transform;
+  transition:
+    transform 0.4s ease,
+    opacity 0.4s ease,
+    filter 0.3s ease;
+}
+
+/* entrada */
+.project-item.enter {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.project-item.enter:hover {
+  transform: translateY(0) scale(1.03);
+}
+
+/* saída */
+.project-item.exit {
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
 }

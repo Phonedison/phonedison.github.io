@@ -37,7 +37,7 @@ const options = {
   threshold: 0.3,
 };
 
-const observer = new IntersectionObserver((entries) => {
+const observer_nav = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       const theme = entry.target.getAttribute("data-theme");
@@ -49,4 +49,4 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, options);
 
-sections.forEach((section) => observer.observe(section));
+sections.forEach((section) => observer_nav.observe(section));
